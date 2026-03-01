@@ -1,6 +1,6 @@
 'use client';
 
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import GlassCard from '@/components/GlassCard';
 import AnimatedCounter from '@/components/AnimatedCounter';
 
@@ -104,7 +104,7 @@ export default function DeveloperPage() {
                 formatter={(v) => [`${((v as number)/1e6).toFixed(1)}M`, 'Weekly Downloads']} />
               <Bar dataKey="weekly" radius={[0, 4, 4, 0]} opacity={0.85}>
                 {FRAMEWORK_WARS.map((entry, i) => (
-                  <rect key={i} fill={entry.color} />
+                  <Cell key={i} fill={entry.color} />
                 ))}
               </Bar>
             </BarChart>

@@ -42,7 +42,7 @@ export default function CryptoPage() {
       key: 'name', header: 'Asset', sortable: true,
       render: (v, row) => (
         <div className="flex items-center gap-2">
-          <img src={row.image} alt={String(v)} className="w-5 h-5 rounded-full" onError={(e) => ((e.target as HTMLImageElement).style.display = 'none')} />
+          <img src={row.image as string} alt={String(v)} width={20} height={20} className="w-5 h-5 rounded-full" onError={(e) => ((e.target as HTMLImageElement).style.display = 'none')} />
           <div>
             <p className="text-xs font-medium text-slate-200">{String(v)}</p>
             <p className="text-xs text-slate-500 uppercase">{String(row.symbol)}</p>
